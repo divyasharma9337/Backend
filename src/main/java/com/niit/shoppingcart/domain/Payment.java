@@ -1,0 +1,108 @@
+package com.niit.shoppingcart.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
+public class Payment {
+
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	@NotNull(message="The payment method cannot be left blank")
+	private String paymentMethod;
+	
+	private long cardNumber;
+	
+	private String cardHoldersName;
+	
+	private int expiryMonth,expiryYear;
+	
+	private String cardType;
+		
+	private String emailId;
+	
+	private double totalAmount;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+
+	public long getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(long cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getCardHoldersName() {
+		return cardHoldersName;
+	}
+
+	public void setCardHoldersName(String cardHoldersName) {
+		this.cardHoldersName = cardHoldersName;
+	}
+
+	public int getExpiryMonth() {
+		return expiryMonth;
+	}
+
+	public void setExpiryMonth(int expiryMonth) {
+		this.expiryMonth = expiryMonth;
+	}
+
+	public int getExpiryYear() {
+		return expiryYear;
+	}
+
+	public void setExpiryYear(int expiryYear) {
+		this.expiryYear = expiryYear;
+	}
+
+	public String getCardType() {
+		return cardType;
+	}
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	
+	
+}
